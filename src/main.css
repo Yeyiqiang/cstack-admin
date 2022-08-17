@@ -1,0 +1,7 @@
+#app{
+    display: flex;
+  }
+  
+  * {
+    margin: 0;
+  }
