@@ -1,7 +1,7 @@
 
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import { Start } from '../pages/start'
-import type { AppRouteRecordRaw } from './type';
+import Start from '../pages/Start'
+import type { AppRouteRecordRaw } from './types';
 import { App } from 'vue'
 /* 批量导入 */
 const files: Record<string,any> = import.meta.glob(['@/pages/**/*.tsx','!**/components'])
@@ -16,9 +16,12 @@ const baseRouter:AppRouteRecordRaw[] = [
     }
 ]
 
+interface ROUTER_MODULE {
+    [key:string]:Object,
+}
 /* 加入到路由集合中 */
 async function createRouterList(){
-    const routeModuleObj:Object = {};
+    const routeModuleObj:ROUTER_MODULE = {};
     const routeModuleList:Array<any> = [];
     /* 找出映射表中的key */
     for(let key in files){

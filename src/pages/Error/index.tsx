@@ -1,5 +1,5 @@
 
-import { defineComponent } from "vue"
+import { defineComponent } from 'vue'
 
 export const Error = defineComponent({
     setup(){

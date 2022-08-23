@@ -8,7 +8,7 @@ export const Home = defineComponent({
         return ()=>{
             return (
               <div class={classes['common-layout']}>
-                home
+                home home
                 <RouterView></RouterView>
               </div>
             )

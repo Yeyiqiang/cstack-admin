@@ -1,0 +1,13 @@
+.start{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .progress-style{
+        width: 50%;
+        max-width: 300px;
+    }
+    // background-color: $abc;
+}
