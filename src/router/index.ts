@@ -1,6 +1,6 @@
 
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Start from '../pages/Start'
+import Start from '../pages/start'
 import type { AppRouteRecordRaw } from './types';
 import { App } from 'vue'
 /* 批量导入 */
