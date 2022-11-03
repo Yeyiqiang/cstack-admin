@@ -21,12 +21,9 @@ export default defineConfig({
   },
   /* 路径别名 */
   resolve: {
-    alias: [
-      {
-        find: '@',
-        replacement: path.resolve(__dirname,"src")
-      },
-    ]
+    alias: {
+        '@': path.resolve(__dirname,"./src")
+    }
   },
   /* 插件 */
   plugins: [
@@ -34,12 +31,16 @@ export default defineConfig({
     vueJsx(),
     AutoImport({
       imports: ["vue", "vue-router"],
+      include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/,/\.t\?js$/],
       resolvers: [ElementPlusResolver()],
+      dts:'./auto-imports.d.ts',
     }),
     Components({
+      include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/,/\.t\?js$/],
       resolvers: [ElementPlusResolver({
         importStyle: "sass",
       })],
+      dts: true,
     }),
     viteMockServe({
       supportTs:false,
@@ -53,7 +54,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @import "@/assets/styles/main.scss";
+          @use "@/assets/styles/main.scss" as *;
         `,
       },
     },

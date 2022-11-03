@@ -1,5 +1,4 @@
 
-import { defineComponent,ref,Ref,onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import classes from './start.module.scss'
 
@@ -11,7 +10,7 @@ export default defineComponent({
         const router = useRouter()
         onMounted(() => {
             const timer = setInterval(() => {
-                percentage.value = (percentage.value % 100) + 10
+                percentage.value = (percentage.value % 100) + 20
                 if(percentage.value==100){
                     clearInterval(timer)
                     router.replace('/login')
